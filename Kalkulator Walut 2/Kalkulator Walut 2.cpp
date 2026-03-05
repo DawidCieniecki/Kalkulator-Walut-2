@@ -1,4 +1,5 @@
 #include <iostream>
+#include <map>
 
 using namespace std;
 
@@ -6,30 +7,23 @@ using namespace std;
 
 int main()
 {
-    float kwota_poczatkowa;
+	map<string, float> ceny;
+	ceny["euro"] = 4.2;
+	ceny["dolar"] = 3.6;
+	ceny["frank"] = 4.6;
+	ceny["funt"] = 4.9;
+	float kwota_poczatkowa;
 
-        float kwota_koncowa;
-        string waluta;
-        cout << "Podaj ile pieniedzy chcesz wymienic" << endl;
-        cin >> kwota_poczatkowa;
-        cout << "Podaj walute" << endl;
-        cin >> waluta;
-        if (waluta == "euro")
-        {
-            kwota_koncowa = kwota_poczatkowa / 4.2;
+	float kwota_koncowa;
+	string waluta;
+	cout << "Podaj ile pieniedzy chcesz wymienic" << endl;
+	cin >> kwota_poczatkowa;
+	cout << "Podaj walute" << endl;
+	cin >> waluta;
+	kwota_koncowa = kwota_poczatkowa / ceny[waluta];
 
-        }
-        else if (waluta == "dolar")
-        {
-            kwota_koncowa = kwota_poczatkowa / 3.6;
-        }
+	cout << "Kwota koncowa to: " << kwota_koncowa << endl;
 
-        else if (waluta == "frank")
-        {
-            kwota_koncowa = kwota_poczatkowa / 4.6;
-        }
-
-        cout << "Kwota koncowa to: " << kwota_koncowa << endl;
 
 }
 
